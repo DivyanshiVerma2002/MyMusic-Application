@@ -1,0 +1,112 @@
+<!--press ! then select this emmet abbreviation to get this basic structure of html code-->
+<!DOCTYPE html>
+<html lang="en">
+<!--css link is always included in head, just write link in last line to get emmet abbreviation-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMusic-My Personalised Music App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--script js is always included in body, just write script src -->
+<body>
+    <nav>
+        <ul>
+            <!--to insert a logo here, write li.nav_bar_name ie write li.brand here, it's an emmet abbreviation-->
+            <!--this is called targeting through css-->
+            <li class="brand"><img src="logo.png" alt="spotify">MyMusic</li>
+            <!--to get spotify written on down right side of logo, write spotify just before closing li tag-->
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+
+    <!--this is the main box kind of thing containing all the songs-->
+    <!--this is not bootstrap waali container class-->
+    <div class="container">
+        <div class="songList">
+            <h1>Best of NCS - No Copyright Sounds</h1><!--name of album-->
+            <!--write div.songlist and press enter to get emmet abbreviation-->
+            <!--these are kinda two tables make under div container class-->
+            <!--ye phle sirf div tha, ab humne isse name diya songItemContainer, so that saare songs ek unit ki trah consider ho ske and hum un sbko ek saath thoda neeche shift krde jisse website thodi acchi dikhe-->
+            <div class="songItemContainer">
+                <!--replicate this class to get multiple songs-->
+                <div class="songItem">
+                    <img src="cover_image.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Tum Se Hi</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+                <div class="songItem">
+                    <img src="cover_image_2.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Najaa</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+                <div class="songItem">
+                    <img src="cover_image_3.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Shubhaarambh</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+                <div class="songItem">
+                    <img src="cover_image_4.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Shayad</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+                <div class="songItem">
+                    <img src="cover_image_5.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Khairiyat</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+                <div class="songItem">
+                    <img src="cover_image_6.jpg" alt="1" > <!--write img:src and select emmet abbreviation-->
+                    <span>Haareya</span><!--using span so that the song name appears in a single line-->
+                    <span class="songlistplay"><span class="timestamp">05:34<i class="fas songItemPlay fa-play-circle"></i></span></span>
+                    <!--abhi the output is totally mismanaged, so now write some css for songItem class-->
+                    <!--idhr ye fa-2x add krne se bohot zyada bda ho rha hai, toh abhi aise he rhne do baad mai thoda aur theek kr lenge isse-->
+                </div>
+
+            </div>
+        </div>
+        <div class="songBanner"></div>
+    </div>
+
+    <!--this class will display at bottom what song is playing rn-->
+    <div class="bottom">
+        <!--just type input and select range-->
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100"><!--value=0 here means initially it will start from 0 and then increase-->
+        <!--abhi ye upar he display ho rha hai..css ka use krke iski positioning sahi kr lenge hum-->
+        <div class="icons">
+            <!--fontawesome icons - they are used to put icons in our webpage-->
+            <!--.bottom css file mai color ko white bhi kroo, tbhi dikhega ye-->
+            <i class="fas fa-3x fa-step-backward"></i><!--this play and step check directly from fontawes-->
+            <i class="fas fa-3x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-3x fa-step-forward"></i>
+            <!--replicate it 3 times and write forward and backward on two of them-->
+            <!--<i class="fas fa-play-circle"></i>.....it was originally like this, but it is very small rn, so to increase it's size, we add fa-3x to it in between-->
+        </div>
+        <!--ab we need a gif at bottom which indicates that our song is being played, so we make a songInfo class-->
+        <div class="songInfo">
+            <img src="playing.gif" width="42px" alt="" id="gif">Dance Monkey-Tones and I
+            <!--we add extra attribute width bcoz gif bohot bda thaa-->
+            <!--this text Dance Monkey-Tones and I will come written besides gif-->
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/9523636fab.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

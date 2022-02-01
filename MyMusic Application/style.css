@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
+body{
+    background-color: antiquewhite;
+}
+
+/*in * you write about margin and padding*/
+*{
+    /*just write m0 and press enter to get this written, similarly for padding p0*/
+    /*this marging and padding is done 0 for all elements*/
+    margin: 0;
+    padding: 0;
+
+}
+
+nav{
+    font-family: 'Ubuntu', sans-serif;
+}
+/*to make ul a flexbox*/
+nav ul{
+    display: flex;
+    /*so now the image, home, about all appear horizontally, its basically used to amke all items appear horizontally*/
+    /*right now everything is idhr udhr so to align all that, i.e home about spotify ko ek line mai laana hai hume*/
+    align-items: center;/*p.s. spelling is center and not centre*/
+    /*this will only bring home,about at centre*/
+    list-style-type: none;
+    /*so as to not get bullets in home, about*/
+    height: 65px;
+    /*to change height of nav bar 89--> 65 to decrease it's size*/
+    background-color: black;
+    /*to check if height has changed or not*/
+    color: white;
+    /*this is the colour of text*/
+}
+
+/*to separate spotify home about about do this:*/
+nav ul li{
+    padding: 0 12px;/*this means padding of 0 from top bottom and 12 from side(left-right) for home and about--> li of ul*/
+}
+
+/*to decrease/increase size of image, we use brand class*/
+/*signifies image under class brand*/
+.brand img{
+    width: 44px;
+    /*now on your webpage, right click over image and open inspect element*/
+    /*under elements and its styles, increaes or decrease the size of image according to your own requirements*/
+    /*once you are done, put that size over here*/
+    padding: 0 8px;
+    /*to give some space between logo and the word spotify*/
+}
+
+/*to resize and bring spotify word to centre, we make brand a flexbox*/
+.brand{
+    display: flex;
+    align-items: center;/*p.s. spelling is center and not centre*/
+    /*to make increase and make bold spotify*/
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container{
+    min-height: 90vh; /*48 vh means 48% of height*/
+    /*min height pehle 70 thi, fir adjust krkrke maine 48 pe set kri so that container flexbox jisme best of ncs....
+    vo sab likha hai vo plus progress bar page mai acche se fit ho jae and koi scroll bar side mai na aae 
+    jiski vjah se upar niche krna pade mujhe*/
+    /*now to style container*/
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;/*makes container a flexbox*//*write df and press enter to get this written here*/
+    margin: 23px auto;/*top bottom mai 23px and left right se auto so that it comes in between*/
+    width: 70%;/*it means this black flexbox will shrink to 70% of page size according to left right side*/
+    border-radius: 12px;/*so that corners are made rounded in shape*/
+    padding: 34px;/*so that the text gets inside the box acche se*/
+    background-image: url('bg2.jpg');
+}
+
+/*to style bottom class*/
+/*this is that black strip containg that min max thing*/
+.bottom{
+    position: sticky;
+    height: 110px;/*adjust this 100 to 130 accordingly*/
+    background-color: black;
+    color: white;
+    /*abhi tk that black strip of min max was upar*/
+    bottom: 0;/*we do this because position is sticky*/
+    /*but isse bhi kuch nhi hua because hume apne container class ki min height check krni hogi tab*/
+    /*.container mai kra hai as above*/
+    display: flex;
+    /*so now, to bring progress bar to centre, do all this as below*/
+    justify-content: center;
+    align-items: center;
+    /*we change this flex direction so that play forward and nackward icons appear below progress bar, i.e. all the items appear column wise*/
+    flex-direction: column;
+    /*now to give some decent space between progress bar and play forward backward icons*/
+}
+
+/*now to give some decent space between progress bar and play forward backward icons*/
+.icons{
+    margin-top: 14px;
+}
+
+/*to make cursor as ppinter whenever we place arrow on it*/
+.icons i{
+    cursor: pointer;
+}
+
+/*to increase width of the progress bar(min max waala thing), do this*/
+#myProgressBar{
+    width: 80vw;
+    /*text-align: center;*/
+    /*here text-align: center does not work because myProgressBar isn't a container itself(whose items are to be centered, but it is itself an item here) but it is inside container bottom*/
+    /*so, text-align: center does not work here....so comment it out...*/
+    /*so how to do the content at centre?.....by making bottom a flexbox or other ways too but we do like that here*/  
+    cursor: pointer;/*so that cursor appears when mouse is on seek bar and hence we can move the song back and forth*/
+}
+
+.songItemContainer{
+    /*isse you'll get a good spacing between heading best of.... and all the capsule shaped songs*/
+    margin-top: 74px;
+}
+
+/*to improve looks of song image and name and play symbol and make it look good in totality*/
+/*we will do it separately for songItem and songItem img*/
+.songItem{
+    height: 50px;/*ek basic height set kro, for eg 50px, uske baad webpage ke according dekh dekh ke isse km zyada kro to get the perfect size*/
+    display: flex;/*taaki sb kuch horizontally aa jae acche se*/
+    background-color: white;
+    color: black;
+    width: 80%;/*harry bhai waale mai u can remove this because vo puri space lele toh bhi koi dikkat nhi hai*/
+    /*but meri image spacing thodi alg thi so 80% looks better here*/
+    margin: 12px 0;
+    justify-content: space-between;/*to give space between image and song name and play symbol*/
+    /*check the difference between space around and space between here*/
+    align-items: center;
+    /*abhi meri image bilkul bahar nikl rhi hai box se, so to correct it, i make changes in .songItem img{}, by making width less(for eg 23px)*/
+    border-radius: 34px;/*to make it a kind of capsule type*/
+}
+
+.songItem img{
+    width: 37px;/*adjust this width by seing the webpage and see which suits it the best*/
+    height: 37px;/*adjust all this accordingly with things*/
+    margin: 0 23px;/*jisse sides mai aur image ke left aur play icon ke right mai thodi spacing aa jaegi*/
+    border-radius: 24px;
+}
+
+/* timestamp class mai padding denge so that time aur play icon aur sides thodi well balanced dikhe*/
+.timestamp{
+    margin: 0 23px;/*ye spacing hai between play icon and edge*/
+}
+
+.timestamp i{
+    cursor: pointer;/*agar ye cursor pointer .timestamp mai daal toh cursor time 05;34 pe bhi aaega, abhi sirf play icon pe he aaega*/
+}
+
+/*this is for the positioning of gif and songname besides it*/
+.songInfo{
+    position: absolute;/*absolute not relative because position is sticky*/
+    left: 9.5vw;/*adjust this through inspect element =9.5vw or 121px*/
+    font-family: 'Varela Round', sans-serif;/*to make font of songlist and songname at bottom same*/
+}
+
+/*this will effect visibility of gif when song plays or not*/
+.songInfo img{
+    opacity: 0;/*to make it invisible when song paused*//*using javascript we'll make code such that when opacity becomes 1, the gif becomes visible*/
+    transition: opacity 0.4s ease-in;/*1s vo time hai jisme gif visible se invisible and vice-versa hota hai*/
+
+}
